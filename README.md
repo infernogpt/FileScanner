@@ -15,6 +15,7 @@ A simple Windows download manager tool that scans files for obfuscated code or w
     ```sh
     pip install -r requirements.txt
     ```
+DO NOT REMOVE THE REQUIREMENTS.TXT OR THE PYTHON FILE ITSELF FROM THE DOWNLOAD DIRECTORY
 
 ## Usage
 
