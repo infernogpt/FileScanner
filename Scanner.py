@@ -2,7 +2,8 @@ import os
 import re
 import requests
 import tkinter as tk
-from tkinter import messagebox, simpledialog
+from tkinter import messagebox
+from plyer import notification
 
 class Downloader:
     def __init__(self):
@@ -77,6 +78,11 @@ class DownloadManagerUI:
         reasons = self.scanner.scan_file(file_path)
         if reasons:
             reason_text = "\n".join(reasons)
+            notification.notify(
+                title="File Detected - Please Review",
+                message=f"Detected the following issues:\n{reason_text}",
+                timeout=10
+            )
             if messagebox.askyesno("Scan Results", f"Detected the following issues:\n{reason_text}\nDo you want to keep the file?"):
                 messagebox.showinfo("Download Manager", "Download completed successfully.")
             else:
